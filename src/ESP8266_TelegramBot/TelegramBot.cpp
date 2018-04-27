@@ -1,3 +1,5 @@
+#include <ArduinoJson.h>
+
 #include "TelegramBot.h"
 
 void TelegramBot::init()
@@ -17,9 +19,8 @@ void TelegramBot::init()
 
 }
 
-void TelegramBot::sendMessage(char* text, unsigned int chatId)
+String TelegramBot::makeRequest(String url)
 {
-  String url = "/bot550467257:AAFL6tApzgKeBSoWp-h2ldD5tFKmFxqOYIg/sendMessage?chat_id=" + static_cast<String>(chatId) + "&text=" + text;
   Serial.print("requesting URL: ");
   Serial.println(url);
 
@@ -30,13 +31,13 @@ void TelegramBot::sendMessage(char* text, unsigned int chatId)
 
   Serial.println("request sent");
   while (m_client.connected()) {
-    String line = m_client.readStringUntil('\n');
+    String line = m_client.readStringUntil(']') + "}";
     if (line == "\r") {
       Serial.println("headers received");
       break;
     }
   }
-  String line = m_client.readStringUntil('\n');
+  String line = m_client.readStringUntil(']') + "}";
   if (line.startsWith("{\"state\":\"success\"")) {
     Serial.println("esp8266/Arduino CI successfull!");
   } else {
@@ -47,5 +48,35 @@ void TelegramBot::sendMessage(char* text, unsigned int chatId)
   Serial.println(line);
   Serial.println("==========");
   Serial.println("closing connection");
+
+  return line;
 }
+  
+void TelegramBot::sendMessage(char* text, unsigned int chatId)
+{
+  String url = "/bot" + botToken + "/sendMessage?chat_id=" + static_cast<String>(chatId) + "&text=" + text;
+  makeRequest(url);
+}
+
+void TelegramBot::getUpdates(String offset, int limit)  
+{
+    String url = "/bot" + botToken + "/getUpdates?offset=" + offset + "&limit=" + limit;
+    String result = makeRequest(url);
+    StaticJsonBuffer<500> jsonBuffer;
+
+    JsonObject& root = jsonBuffer.parseObject(result); 
+
+    if(!root.success())
+    {
+       Serial.println("parse failed");
+       return;
+    }
+    JsonArray& list = root["result"];
+    for (auto& request : list) 
+    {
+       int type = request["type"];
+       int value = request["update_id"];
+       Serial.println(value);
+    }
+} 
 

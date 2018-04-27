@@ -19,7 +19,8 @@ void setup() {
 
   // Use WiFiClientSecure class to create TLS connection
   bot.init();
-  bot.sendMessage("Hello From ESP8266!", 316978348);
+  //bot.getUpdates("2",1);
+  bot.sendMessage("Hello From ESP8266!!!", 316978348);
 }
 
 void loop() {
