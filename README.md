@@ -15,3 +15,6 @@
 4.Search "esp8266", install ESP8266 Community:
 
 ![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/6/5/arduino-board-install.png)
+
+5. Connect Arduino to USB, wait for 10 seconds.
+6. Put out GPIO0 wire from GND.
