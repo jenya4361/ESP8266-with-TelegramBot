@@ -12,7 +12,7 @@
 
 ![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/7/9/arduino_board_manager.png)
 
-5.Search "esp8266", install ESP8266 Community:
+5.Search and install esp8266 by ESP8266 Community:
 
 ![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/6/5/arduino-board-install.png)
 
