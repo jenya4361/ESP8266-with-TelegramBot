@@ -18,7 +18,7 @@
 
 6. Connect Arduino to USB, wait for 10 seconds.
 7. Put out GPIO0 wire from GND.
-8. Set right bot token in TelegramBot.h, set your chat_id in ESP8266_TelegramBot.ino.
+8. Set token of your bot in TelegramBot.h, set your chat_id in ESP8266_TelegramBot.ino.
 9. Paste Code in IDE.
 10. Ready.
 
