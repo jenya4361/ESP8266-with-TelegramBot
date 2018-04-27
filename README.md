@@ -8,13 +8,17 @@
 
 ![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/6/5/arduino-board-manager-link.png)
 
-3. Open Boards Manager.
+4. Open Boards Manager.
 
 ![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/7/9/arduino_board_manager.png)
 
-4.Search "esp8266", install ESP8266 Community:
+5.Search "esp8266", install ESP8266 Community:
 
 ![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/6/5/arduino-board-install.png)
 
-5. Connect Arduino to USB, wait for 10 seconds.
-6. Put out GPIO0 wire from GND.
+6. Connect Arduino to USB, wait for 10 seconds.
+7. Put out GPIO0 wire from GND.
+8. Set right bot token in TelegramBot.h, set your chat_id in ESP8266_TelegramBot.ino.
+9. Paste Code in IDE.
+10. Ready.
+
