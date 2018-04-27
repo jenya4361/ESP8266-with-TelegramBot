@@ -4,8 +4,14 @@
 # Steps:
 1. Connect wires as shown on the picture.
 2. Download Arduino IDE.
+3. File->Preferences->Enter to Additional Boards Manager URLs: "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
+
+![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/6/5/arduino-board-manager-link.png)
+
 3. Open Boards Manager.
 
 ![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/7/9/arduino_board_manager.png)
 
-4.
+4.Search "esp8266", install ESP8266 Community:
+
+![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/6/5/arduino-board-install.png)
