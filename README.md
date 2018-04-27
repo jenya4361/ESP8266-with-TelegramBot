@@ -4,6 +4,8 @@
 # Steps:
 1. Connect wires as shown on the picture.
 2. Download Arduino IDE.
-3. Open Boards Manager 
+3. Open Boards Manager.
+
 ![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/7/9/arduino_board_manager.png)
+
 4.
