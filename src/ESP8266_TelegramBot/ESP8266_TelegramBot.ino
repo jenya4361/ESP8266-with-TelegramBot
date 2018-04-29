@@ -3,6 +3,8 @@
 const char* ssid = "Rexxar";
 const char* password = "na46-w3cp-16yg";
 
+unsigned long long int prev = 0;
+bool isValOne = false;
 TelegramBot bot;
 void setup() {
   Serial.begin(115200);
@@ -19,11 +21,26 @@ void setup() {
 
   // Use WiFiClientSecure class to create TLS connection
   bot.init();
-  //bot.getUpdates("2",1);
-  bot.sendMessage("Hello From ESP8266!!!", 316978348);
+  bot.sendMessage("2",1);
 }
 
 void loop() {
+ 
+     /*unsigned long currentMillis = millis();
+  if( isValOne )
+  {
 
+    if (currentMillis - prev >= 1000) 
+    {
+      prev = currentMillis;
+      isValOne = false;
+      bot.sendMessage("Hello From ESP8266!!!", 316978348);
+      Serial.println("send");
+    }
+  }
   
+  bool val = digitalRead(0);     // считываем значение
+  Serial.println(val);
+  if( !isValOne )
+    isValOne = val;*/
 }

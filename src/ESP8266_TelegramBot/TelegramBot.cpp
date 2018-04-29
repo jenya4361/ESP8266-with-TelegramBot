@@ -30,7 +30,7 @@ String TelegramBot::makeRequest(String url)
                "Connection: close\r\n\r\n");
 
   Serial.println("request sent");
-  while (m_client.connected()) {
+  /*while (m_client.connected()) {
     String line = m_client.readStringUntil(']') + "}";
     if (line == "\r") {
       Serial.println("headers received");
@@ -48,7 +48,8 @@ String TelegramBot::makeRequest(String url)
   Serial.println(line);
   Serial.println("==========");
   Serial.println("closing connection");
-
+*/
+  String line;
   return line;
 }
   
