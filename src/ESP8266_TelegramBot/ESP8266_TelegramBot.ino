@@ -7,6 +7,7 @@ unsigned long long int prev = 0;
 bool isValOne = false;
 TelegramBot bot;
 void setup() {
+
   Serial.begin(115200);
   Serial.println();
   Serial.print("connecting to ");
@@ -21,26 +22,8 @@ void setup() {
 
   // Use WiFiClientSecure class to create TLS connection
   bot.init();
-  bot.sendMessage("2",1);
+  bot.sendMessage("Somebody Opened Your Door!",316978348);
 }
 
 void loop() {
- 
-     /*unsigned long currentMillis = millis();
-  if( isValOne )
-  {
-
-    if (currentMillis - prev >= 1000) 
-    {
-      prev = currentMillis;
-      isValOne = false;
-      bot.sendMessage("Hello From ESP8266!!!", 316978348);
-      Serial.println("send");
-    }
-  }
-  
-  bool val = digitalRead(0);     // считываем значение
-  Serial.println(val);
-  if( !isValOne )
-    isValOne = val;*/
 }
