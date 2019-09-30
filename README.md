@@ -1,24 +1,35 @@
-# ESP8266-with-TelegramBot
-![alt text](https://www.elec-cafe.com/wp-content/uploads/2015/09/ESP8266-ESP-01-Firmware-Update_Elec-Cafe.png)
+<center>
+<img src="Resources/AppIcon00.png" width="70">
+</center>
 
-# Steps:
-1. Connect wires as shown on the picture.
-2. Download Arduino IDE.
-3. File->Preferences->Enter to Additional Boards Manager URLs: "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
+# Sending messages to Telegram Bot from ESP8266.
 
-![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/6/5/arduino-board-manager-link.png)
+* **Simple**. All you need is: Enter wi-fi password, ssid, bot token and recipients.
 
-4. Open Boards Manager.
+# How to use?
 
-![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/7/9/arduino_board_manager.png)
+1. Set token of your bot in init method, set recipients ESP8266_TelegramBot.ino.
+2. Connect wires as shown on the picture.
 
-5.Search and install esp8266 by ESP8266 Community:
+<center>
+<img src="Resources/Scheme00.png" width="400">
+</center>
 
-![alt text](https://cdn.sparkfun.com/assets/learn_tutorials/3/6/5/arduino-board-install.png)
+3. Download Arduino IDE.
+4. File->Preferences->Enter to Additional Boards Manager URLs: "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
 
-6. Connect Arduino to USB, wait for 10 seconds.
-7. Put out GPIO0 wire from GND.
-8. Set token of your bot in TelegramBot.h, set your chat_id in ESP8266_TelegramBot.ino.
-9. Paste Code in IDE.
-10. Ready.
+<center>
+<img src="Resources/Tutorial00.png" width="400">
+</center>
 
+5. Open Boards Manager.
+6.Search and install esp8266 by ESP8266 Community:
+
+<center>
+<img src="Resources/Tutorial01.png" width="400">
+</center>
+
+
+7. Connect Arduino to USB, wait for 10 seconds.
+8. Put out GPIO0 wire from GND.
+9. Ready.
