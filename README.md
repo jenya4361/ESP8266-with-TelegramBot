@@ -8,7 +8,7 @@
 
 # How to use?
 
-1. Set token of your bot in init method, set recipients ESP8266_TelegramBot.ino.
+1. Set token of your bot and recipients in init method, set ssid and password of Wi-Fi in ESP8266_TelegramBot.ino.
 2. Connect wires as shown on the picture.
 
 <center>
