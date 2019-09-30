@@ -23,7 +23,7 @@
 </center>
 
 5. Open Boards Manager.
-6.Search and install esp8266 by ESP8266 Community:
+6. Search and install esp8266 by ESP8266 Community:
 
 <center>
 <img src="Resources/Tutorial01.png" width="400">
