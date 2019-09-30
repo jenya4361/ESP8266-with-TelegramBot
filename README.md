@@ -1,5 +1,5 @@
 <center>
-<img src="Resources/AppIcon00.png" width="70">
+<img src="Resources/AppIcon00.png" width="80">
 </center>
 
 # Sending messages to Telegram Bot from ESP8266.
