@@ -6,28 +6,30 @@ const int httpsPort = 443;
 
 class TelegramBot
 {
+  private:
+    static TelegramBot* m_instance;
+
+    TelegramBot()
+      : m_host( "api.telegram.org" )
+      , m_fingerprint( "37:21:36:77:50:57:F3:C9:28:D0:F7:FA:4C:05:35:7F:60:C1:20:44" )
+    {}
+
+    String makeRequest(String url);
+
   public:
 
-  TelegramBot()
-    : host( "api.telegram.org" )
-    , fingerprint( "37:21:36:77:50:57:F3:C9:28:D0:F7:FA:4C:05:35:7F:60:C1:20:44" )
-    , botToken( "611112968:AAFmVifZwM9vI-ws_tabN91X0HcdbuMMGCc" )
-  {}
-  
-  void init();
+    inline static TelegramBot* Instance() { return m_instance; }
 
-  String makeRequest(String url);
-  void sendMessage(char* text, unsigned int chatId);
-  void getUpdates(String offset, int limit);
-  void checkCommands(String message);
-  
-  const WiFiClientSecure& getClient() const { return m_client; };
+    void init( const char* botToken, unsigned int recipients[] );
+    void sendMessage(const char* text);
+    const WiFiClientSecure& getClient() const { return m_client; };
 
   private:
-  char* host;
-  char* fingerprint;
-  String botToken;
-  
-  WiFiClientSecure m_client;
-};
+    unsigned int* m_recipients;
+    int m_recipientsSize;
+    char* m_host;
+    char* m_fingerprint;
+    String m_botToken;
 
+    WiFiClientSecure m_client;
+};

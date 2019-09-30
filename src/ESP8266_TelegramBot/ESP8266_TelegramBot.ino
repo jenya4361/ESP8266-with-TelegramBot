@@ -1,28 +1,37 @@
 #include <ESP8266WiFi.h>
 #include "TelegramBot.h"
-const char* ssid = "Rexxar";
-const char* password = "na46-w3cp-16yg";
+const char* ssid = "TPLink-12345";
+const char* password = "12345678";
 
-unsigned long long int prev = 0;
-bool isValOne = false;
-TelegramBot bot;
+const char* botToken = "Your bot token.";
+
+// Telegram chat ids
+unsigned int recipients[] = 
+{
+  111111111,
+  222222222
+};
+
 void setup() {
 
+  // Connecting
   Serial.begin(115200);
-  Serial.println();
-  Serial.print("connecting to ");
+  Serial.print("Connecting to ");
   Serial.println(ssid);
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
+  while( WiFi.status() != WL_CONNECTED )
+  {
     delay(500);
     Serial.print(".");
   }
   Serial.println("WiFi connected");
 
-  // Use WiFiClientSecure class to create TLS connection
-  bot.init();
-  bot.sendMessage("Somebody Opened Your Door!",316978348);
+  // Initializing
+  TelegramBot::Instance()->init( botToken, recipients );
+
+  // Send msg
+  TelegramBot::Instance()->sendMessage( "Somebody Opened Your Door!" );
 }
 
 void loop() {
